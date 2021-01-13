@@ -3,7 +3,7 @@ const request = require('request');
 const fs = require('fs')
 
 
-const byteCounter = request(myArgs[0], (error, response, body) => {
+request(myArgs[0], (error, response, body) => {
   const strRes = JSON.stringify(body)
   const byteCount = strRes.length;
   fs.writeFile(myArgs[1], strRes, () => {
